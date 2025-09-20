@@ -13,6 +13,13 @@ namespace ECommerce.Infrastructure.Data
         public DbSet<Category> Categories { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.Entity<Category>()
+              .Property(c => c.Id)
+              .ValueGeneratedOnAdd();
+
+            modelBuilder.Entity<Product>()
+                .Property(p => p.Id)
+                .ValueGeneratedOnAdd();
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         }
     }

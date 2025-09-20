@@ -178,3 +178,11 @@ C:\Users\sarah\source\repos\ECommerce\ECommerce.API\obj\Debug\net8.0\refint\ECom
 C:\Users\sarah\source\repos\ECommerce\ECommerce.API\obj\Debug\net8.0\ECommerce.API.pdb
 C:\Users\sarah\source\repos\ECommerce\ECommerce.API\obj\Debug\net8.0\ECommerce.API.genruntimeconfig.cache
 C:\Users\sarah\source\repos\ECommerce\ECommerce.API\obj\Debug\net8.0\ref\ECommerce.API.dll
+C:\Users\sarah\source\repos\ECommerce\ECommerce.API\obj\Debug\net8.0\ECommerce.API.sourcelink.json
+C:\Users\sarah\source\repos\ECommerce\ECommerce.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\sarah\source\repos\ECommerce\ECommerce.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\sarah\source\repos\ECommerce\ECommerce.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\sarah\source\repos\ECommerce\ECommerce.API\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\sarah\source\repos\ECommerce\ECommerce.API\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\sarah\source\repos\ECommerce\ECommerce.API\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\sarah\source\repos\ECommerce\ECommerce.API\obj\Debug\net8.0\ECommerce.API.MvcApplicationPartsAssemblyInfo.cs

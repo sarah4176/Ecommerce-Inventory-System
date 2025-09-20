@@ -17,3 +17,4 @@ C:\Users\sarah\source\repos\ECommerce\ECommerce.Application\obj\Debug\net8.0\ECo
 C:\Users\sarah\source\repos\ECommerce\ECommerce.Application\obj\Debug\net8.0\refint\ECommerce.Application.dll
 C:\Users\sarah\source\repos\ECommerce\ECommerce.Application\obj\Debug\net8.0\ECommerce.Application.pdb
 C:\Users\sarah\source\repos\ECommerce\ECommerce.Application\obj\Debug\net8.0\ref\ECommerce.Application.dll
+C:\Users\sarah\source\repos\ECommerce\ECommerce.Application\obj\Debug\net8.0\ECommerce.Application.sourcelink.json
