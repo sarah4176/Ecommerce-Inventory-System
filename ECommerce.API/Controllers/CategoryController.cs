@@ -1,6 +1,7 @@
 ﻿using Ecommerce.Middleware.Common;
 using ECommerce.Application.DTOs;
 using ECommerce.Application.Services;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,6 +9,7 @@ namespace ECommerce.API.Controllers
 {
     [ApiController]
     [Route("api/categories")]
+    //[Authorize]
     public class CategoryController : ControllerBase
     {
         private readonly ICategoryService _categoryService;

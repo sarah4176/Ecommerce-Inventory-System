@@ -10,6 +10,13 @@ namespace ECommerce.Application.Common
         {
             CreateMap<CreateCategoryDTO, Category>();
             CreateMap<Category, CategoryDTO>();
+            CreateMap<Product, ProductDTO>();
+            CreateMap<CreateProductDTO, Product>()
+                .ForMember(dest => dest.ImageUrl, opt => opt.Ignore());
+            CreateMap<CreateProductDTO, Product>()
+                .ForAllMembers(opts => opts.Condition((src, dest, srcMember) => srcMember != null));
+            CreateMap<Category, CategoryBasicDTO>();
         }
     }
-}
+    }
+

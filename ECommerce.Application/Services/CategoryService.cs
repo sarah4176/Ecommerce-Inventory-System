@@ -24,7 +24,6 @@ namespace ECommerce.Application.Services
                 throw ApiException.CategoryNotFound(id);
 
             var categoryDto = _mapper.Map<CategoryDTO>(category);
-            categoryDto.ProductCount = await _unitOfWork.Categories.GetProductCountAsync(id);
 
             return categoryDto;
         }
@@ -32,19 +31,8 @@ namespace ECommerce.Application.Services
         public async Task<IEnumerable<CategoryDTO>> GetAllCategoriesAsync()
         {
             var categories = await _unitOfWork.Categories.GetAllAsync();
-
-            var categoryDtos = await Task.WhenAll(
-                categories.Select(async category =>
-                {
-                    var categoryDto = _mapper.Map<CategoryDTO>(category);
-                    categoryDto.ProductCount = await _unitOfWork.Categories.GetProductCountAsync(category.Id);
-                    return categoryDto;
-                })
-            );
-
-            return categoryDtos;
+            return _mapper.Map<IEnumerable<CategoryDTO>>(categories);
         }
-
         public async Task<CategoryDTO> CreateCategoryAsync(CreateCategoryDTO createCategoryDto)
         {
             var existingCategory = await _unitOfWork.Categories.GetByNameAsync(createCategoryDto.Name);
@@ -58,8 +46,6 @@ namespace ECommerce.Application.Services
             await _unitOfWork.SaveAsync();
 
             var createdCategoryDto = _mapper.Map<CategoryDTO>(category);
-            createdCategoryDto.ProductCount = 0; 
-
             return createdCategoryDto;
         }
 

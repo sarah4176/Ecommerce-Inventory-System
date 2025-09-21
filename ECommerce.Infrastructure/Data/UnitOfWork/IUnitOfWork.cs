@@ -6,6 +6,7 @@ namespace ECommerce.Infrastructure.Data.UnitOfWork
     {
         ICategoryRepository Categories { get; }
         IProductRepository Products { get; }
+        IUserRepository Users { get; }
         Task<int> SaveAsync();
     }
 }

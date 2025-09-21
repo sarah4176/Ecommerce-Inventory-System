@@ -8,6 +8,7 @@ namespace ECommerce.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    //[Authorize]
     public class ProductController : ControllerBase
     {
         private readonly IProductService _productService;
@@ -34,7 +35,7 @@ namespace ECommerce.API.Controllers
         }
 
         [HttpPost("CreateProduct")]
-        public async Task<ActionResult<ApiResponse>> Create([FromBody] CreateProductDTO createDto)
+        public async Task<ActionResult<ApiResponse>> Create([FromForm] CreateProductDTO createDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ApiResponse.ErrorResponse("Invalid input data", 400));
@@ -47,7 +48,7 @@ namespace ECommerce.API.Controllers
         }
 
         [HttpPut("UpdateProduct")]
-        public async Task<IActionResult> Update(int id, [FromBody] CreateProductDTO updateDto)
+        public async Task<IActionResult> Update(int id, [FromForm] CreateProductDTO updateDto)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ApiResponse.ErrorResponse("Invalid input data", 400));
