@@ -23,7 +23,7 @@ Features
 ✅ Pagination and Filtering
 
 Prerequisites
-.NET 6.0 SDK or later
+.NET 8.0 SDK 
 
 SQL Server (LocalDB, Express, or full version)
 
