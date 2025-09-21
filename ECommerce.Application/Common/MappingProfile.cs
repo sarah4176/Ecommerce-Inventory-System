@@ -10,7 +10,6 @@ namespace ECommerce.Application.Common
         {
             CreateMap<CreateCategoryDTO, Category>();
             CreateMap<Category, CategoryDTO>();
-            CreateMap<CreateCategoryDTO, Category>().ReverseMap();
         }
     }
 }

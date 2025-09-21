@@ -9,3 +9,4 @@ C:\Users\sarah\source\repos\ECommerce\Ecommerce.Middleware\obj\Debug\net8.0\Ecom
 C:\Users\sarah\source\repos\ECommerce\Ecommerce.Middleware\obj\Debug\net8.0\refint\Ecommerce.Middleware.dll
 C:\Users\sarah\source\repos\ECommerce\Ecommerce.Middleware\obj\Debug\net8.0\Ecommerce.Middleware.pdb
 C:\Users\sarah\source\repos\ECommerce\Ecommerce.Middleware\obj\Debug\net8.0\ref\Ecommerce.Middleware.dll
+C:\Users\sarah\source\repos\ECommerce\Ecommerce.Middleware\obj\Debug\net8.0\Ecommerce.Middleware.sourcelink.json

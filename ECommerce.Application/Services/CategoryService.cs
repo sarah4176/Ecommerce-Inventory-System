@@ -32,14 +32,15 @@ namespace ECommerce.Application.Services
         public async Task<IEnumerable<CategoryDTO>> GetAllCategoriesAsync()
         {
             var categories = await _unitOfWork.Categories.GetAllAsync();
-            var categoryDtos = new List<CategoryDTO>();
 
-            foreach (var category in categories)
-            {
-                var categoryDto = _mapper.Map<CategoryDTO>(category);
-                categoryDto.ProductCount = await _unitOfWork.Categories.GetProductCountAsync(category.Id);
-                categoryDtos.Add(categoryDto);
-            }
+            var categoryDtos = await Task.WhenAll(
+                categories.Select(async category =>
+                {
+                    var categoryDto = _mapper.Map<CategoryDTO>(category);
+                    categoryDto.ProductCount = await _unitOfWork.Categories.GetProductCountAsync(category.Id);
+                    return categoryDto;
+                })
+            );
 
             return categoryDtos;
         }

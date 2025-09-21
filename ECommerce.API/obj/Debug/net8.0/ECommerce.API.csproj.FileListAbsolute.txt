@@ -186,3 +186,4 @@ C:\Users\sarah\source\repos\ECommerce\ECommerce.API\bin\Debug\net8.0\Microsoft.E
 C:\Users\sarah\source\repos\ECommerce\ECommerce.API\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
 C:\Users\sarah\source\repos\ECommerce\ECommerce.API\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
 C:\Users\sarah\source\repos\ECommerce\ECommerce.API\obj\Debug\net8.0\ECommerce.API.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\sarah\source\repos\ECommerce\ECommerce.API\bin\Debug\net8.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

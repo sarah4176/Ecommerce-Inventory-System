@@ -1,5 +1,9 @@
-var builder = WebApplication.CreateBuilder(args);
+using ECommerce.Application;
+using ECommerce.Infrastructure;
 
+var builder = WebApplication.CreateBuilder(args);
+builder.Services.AddInfrastructure(builder.Configuration);
+builder.Services.AddApplication();
 // Add services to the container.
 
 builder.Services.AddControllers();
