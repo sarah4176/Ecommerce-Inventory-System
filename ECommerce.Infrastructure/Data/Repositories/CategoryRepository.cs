@@ -20,5 +20,12 @@ namespace ECommerce.Infrastructure.Data.Repositories
             return await _context.Products
                 .CountAsync(p => p.CategoryId == categoryId);
         }
+        public async Task<IEnumerable<Category>> SearchAsync(string searchTerm)
+        {
+            return await _context.Categories
+                .Where(c => c.Name.Contains(searchTerm) ||
+                           (c.Description != null && c.Description.Contains(searchTerm)))
+                .ToListAsync();
+        }
     }
 }

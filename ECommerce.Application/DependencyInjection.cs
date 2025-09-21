@@ -1,5 +1,4 @@
-﻿using ECommerce.Application.Common;
-using ECommerce.Application.Services;
+﻿using ECommerce.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace ECommerce.Application
@@ -8,10 +7,12 @@ namespace ECommerce.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(MappingProfile));
+            services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
             services.AddScoped<ICategoryService, CategoryService>();
-
+            services.AddHttpContextAccessor();
+            services.AddScoped<IImageService, ImageService>();
+            services.AddScoped<IProductService, ProductService>();
             return services;
         }
     }

@@ -93,5 +93,10 @@ namespace ECommerce.Application.Services
             _unitOfWork.Categories.Delete(category);
             await _unitOfWork.SaveAsync();
         }
+        public async Task<IEnumerable<CategoryDTO>> SearchCategoriesAsync(string searchTerm)
+        {
+            var categories = await _unitOfWork.Categories.SearchAsync(searchTerm);
+            return _mapper.Map<IEnumerable<CategoryDTO>>(categories);
+        }
     }
 }

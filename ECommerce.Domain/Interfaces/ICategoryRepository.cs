@@ -6,5 +6,6 @@ namespace ECommerce.Domain.Interfaces
     {
         Task<Category> GetByNameAsync(string name);
         Task<int> GetProductCountAsync(int categoryId);
+        Task<IEnumerable<Category>> SearchAsync(string searchTerm);
     }
 }

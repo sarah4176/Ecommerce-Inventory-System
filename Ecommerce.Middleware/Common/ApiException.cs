@@ -19,7 +19,8 @@
         }
         public static ApiException NotFound(string message = null)
             => new(ErrorType.NotFound, message);
-
+        public static ApiException BadRequest(string message = null)
+            => new(ErrorType.BadRequest, message);
         public static ApiException CategoryNotFound(int id)
             => new(ErrorType.CategoryNotFound, $"Category with ID {id} not found");
 

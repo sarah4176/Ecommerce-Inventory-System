@@ -6,6 +6,7 @@
         ValidationError = 400,
         InvalidInput = 400,
         MissingRequiredField = 400,
+        BadRequest = 400,
 
         // 401 Unauthorized
         Unauthorized = 401,

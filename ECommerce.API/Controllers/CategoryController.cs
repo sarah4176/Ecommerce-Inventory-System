@@ -16,48 +16,60 @@ namespace ECommerce.API.Controllers
         {
             _categoryService = categoryService;
         }
-        [HttpGet]
-        public async Task<ActionResult<ApiResponse<IEnumerable<CategoryDTO>>>> GetAll()
+        [HttpGet("GetAllCategories")]
+        public async Task<ActionResult<ApiResponse>> GetAll() 
         {
             var categories = await _categoryService.GetAllCategoriesAsync();
-            return Ok(ApiResponse<IEnumerable<CategoryDTO>>.SuccessResponse(categories));
+            return Ok(categories); 
         }
 
-        [HttpGet("{id}")]
-        public async Task<ActionResult<ApiResponse<CategoryDTO>>> GetById(int id)
+        [HttpGet("GetCategoryById")]
+        public async Task<ActionResult<ApiResponse>> GetById(int id) 
         {
             var category = await _categoryService.GetCategoryByIdAsync(id);
-            return Ok(ApiResponse<CategoryDTO>.SuccessResponse(category));
+            if (category == null)
+                return NotFound(ApiResponse.ErrorResponse("Category not found", 404));
+
+            return Ok(category); 
         }
 
-        [HttpPost]
-        public async Task<ActionResult<ApiResponse<CategoryDTO>>> Create([FromBody] CreateCategoryDTO createDto)
+        [HttpPost("CreateCategory")]
+        public async Task<ActionResult<ApiResponse>> Create([FromBody] CreateCategoryDTO createDto) 
         {
             if (!ModelState.IsValid)
-                return BadRequest(ApiResponse<CategoryDTO>.ErrorResponse("Invalid input data", 400));
+                return BadRequest(ApiResponse.ErrorResponse("Invalid input data", 400));
 
             var category = await _categoryService.CreateCategoryAsync(createDto);
 
             return CreatedAtAction(nameof(GetById),
                 new { id = category.Id },
-                ApiResponse<CategoryDTO>.SuccessResponse(category, "Category created successfully", 201));
+                ApiResponse.SuccessResponse(category, "Category created successfully", 201)); 
         }
 
-        [HttpPut("{id}")]
+
+        [HttpPut("UpdateCategory")]
         public async Task<IActionResult> Update(int id, [FromBody] CreateCategoryDTO updateDto)
         {
             if (!ModelState.IsValid)
-                return BadRequest();
+                return BadRequest(ApiResponse.ErrorResponse("Invalid input data", 400));
 
             await _categoryService.UpdateCategoryAsync(id, updateDto);
-            return NoContent(); 
+            return NoContent();
         }
-
-        [HttpDelete("{id}")]
+        [HttpDelete("DeleteCategory")]
         public async Task<IActionResult> Delete(int id)
         {
             await _categoryService.DeleteCategoryAsync(id);
-            return NoContent(); 
+            return NoContent();
+        }
+        [HttpGet("SearchCategory")]
+        public async Task<ActionResult<ApiResponse>> Search([FromQuery] string keyword)
+        {
+            if (string.IsNullOrWhiteSpace(keyword))
+                return BadRequest(ApiResponse.ErrorResponse("Search query is required", 400));
+
+            var categories = await _categoryService.SearchCategoriesAsync(keyword);
+            return Ok(ApiResponse.SuccessResponse(categories));
         }
     }
 }

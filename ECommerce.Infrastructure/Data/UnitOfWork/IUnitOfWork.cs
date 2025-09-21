@@ -5,6 +5,7 @@ namespace ECommerce.Infrastructure.Data.UnitOfWork
     public interface IUnitOfWork : IDisposable
     {
         ICategoryRepository Categories { get; }
+        IProductRepository Products { get; }
         Task<int> SaveAsync();
     }
 }

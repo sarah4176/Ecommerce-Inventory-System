@@ -9,5 +9,6 @@ namespace ECommerce.Application.Services
         Task<CategoryDTO> CreateCategoryAsync(CreateCategoryDTO createCategoryDto);
         Task UpdateCategoryAsync(int id, CreateCategoryDTO updateCategoryDto);
         Task DeleteCategoryAsync(int id);
+        Task<IEnumerable<CategoryDTO>> SearchCategoriesAsync(string searchTerm);
     }
 }

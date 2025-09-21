@@ -7,14 +7,18 @@ namespace ECommerce.Infrastructure.Data.UnitOfWork
     {
         private readonly ApplicationDbContext _context;
         private ICategoryRepository _categoryRepository;
+        private IProductRepository _productRepository;
 
-        public UnitOfWork(ApplicationDbContext context)
+        public UnitOfWork(ApplicationDbContext context, ICategoryRepository categoryRepository, IProductRepository productRepository)
         {
             _context = context;
+            _categoryRepository = categoryRepository;
+            _productRepository = productRepository;
         }
 
         public ICategoryRepository Categories =>
             _categoryRepository ??= new CategoryRepository(_context);
+        public IProductRepository Products => _productRepository ??= new ProductRepository(_context);
 
         public async Task<int> SaveAsync()
         {
