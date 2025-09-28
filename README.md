@@ -1,5 +1,5 @@
-ECommerce API
-A robust ASP.NET Core Web API for e-commerce operations with product and category management, JWT authentication, and Swagger documentation.
+ECommerce APIs
+Robust ASP.NET Core Web APIs for e-commerce operations with product and category management, JWT authentication, and Swagger documentation.
 
 Features
 ✅ Product Management (CRUD operations with image upload)
